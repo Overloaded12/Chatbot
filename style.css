@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0f1a;
+  color: #e0f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  width: 95%;
+  max-width: 500px;
+  height: 95vh;
+  background: linear-gradient(145deg, #101828, #1a233a);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #13213c;
+  border-bottom: 1px solid #0af;
+}
+
+header h1 {
+  font-size: 1.3rem;
+  color: #0af;
+}
+
+#devInfoBtn {
+  background: none;
+  color: #0af;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.message {
+  max-width: 80%;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #0077cc;
+  color: white;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #192f4d;
+  color: #e0f7fa;
+}
+
+.trash {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.input-area {
+  display: flex;
+  padding: 0.7rem;
+  background-color: #13213c;
+}
+
+#userInput {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+#sendBtn {
+  margin-left: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #0af;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(145deg, #2d1a0f, #4a2b1a);
+  color: #fff8e1;
+  border: 1px solid #ff9800;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 90%;
+  width: 300px;
+  animation: slideIn 0.5s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+#coffeePopup button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .popup {
+    right: 10px;
+    left: 10px;
+    width: auto;
+    bottom: 10px;
+  }
+  
+  .chat-container {
+    height: 100vh;
+    width: 100%;
+    border-radius: 0;
+  }
+}
